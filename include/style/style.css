@@ -1,0 +1,306 @@
+
+        /* Navigation bar styles */
+        .navbar {
+            background-color: rgb(18, 18, 18);
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #555555;
+            color: white;
+            
+        }
+
+        
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg,#073B3A, #0B6E4F, #08A045, #6BBF59, #21D375);
+            animation: color 12s ease-in-out infinite;
+            background-size: 300% 300%; /* Corrected background-size values */
+            margin: 0;
+            padding:0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        @keyframes color {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+        
+
+
+
+
+
+.container {
+    
+    width: 500px;
+    background-color: #272727;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adding box shadow */
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #6fd649; /* Blue heading color */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #6fd649; /* Set the text color */
+    transition: background-color 5000s ease-in-out 0s; 
+}
+
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background-color: #1a1a1a; /* Light green input background */
+    color: #6fd649;
+}
+
+
+
+
+input[type="submit"] {
+    width: auto;
+    background: linear-gradient(45deg,  #4b9331, #6fd649);
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(45deg,#346622, #4b9331);
+}
+
+a {
+    text-decoration: none;
+    color: #6fd649; /* Medium sea green link color */
+}
+
+a:hover{  color: #4b9331; /* Medium sea green link color */}
+
+
+.log_in {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #6fd649; /* Darker green text */
+}
+
+
+
+.error-message {
+    color: red; /* Set error message color to red */
+    display: block;
+    text-align: center;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+
+.error-message {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+/* CSS for modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #okButton {
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+  
+
+  .popup{
+    width: 400px;
+    background-color: #272727;
+    border-radius: 6px;
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: white;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s    ;
+  }
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adding box shadow */
+}
+
+
+
+  .popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .popup h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+  }
+
+  .popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .red-text {
+    color: red;
+  }
+
+
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333333;
+    transition: opacity 0.75s, visibility 0.75s;
+  }
+  
+  .loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #dddddd;
+    border-top-color: #6fd649;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+  }
+  
+  @keyframes loading {
+    from {
+      transform: rotate(0turn);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  
+
+          /* CSS for loading overlay */
+          .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay.show {
+            display: flex;
+        }

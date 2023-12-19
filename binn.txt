@@ -1,0 +1,148 @@
+<style>
+        /* CSS styles for the pop-up form */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+
+<div class="overlay" id="overlay">
+    <div class="popup">
+        <h3>Enter OTP</h3>
+        <form id="otpForm">
+            <label for="otp">We've sent you an OTP. Please check your email.</label><br>
+            <input type="text" id="otp" name="otp" required><br>
+            <input type="submit" value="Submit" id="otpSubmit">
+               
+                <p id="otpError" style="color: red;"></p>
+        </form>
+    </div>
+</div>
+
+    
+
+
+    <script>
+    // Get the form and submit button
+    const emailForm = document.getElementById('emailForm');
+    const submitButton = document.getElementById('submitButton');
+
+    // Get the overlay and OTP form elements
+    const overlay = document.getElementById('overlay');
+    const otpForm = document.getElementById('otpForm');
+    const otpSubmit = document.getElementById('otpSubmit');
+
+    // Function to show the OTP pop-up
+    function showOtpPopup() {
+        overlay.style.display = 'flex';
+    }
+
+    // Function to hide the OTP pop-up
+    function hideOtpPopup() {
+        overlay.style.display = 'none';
+        // Reset the OTP input field
+        document.getElementById('otp').value = '';
+    }
+
+    // Event listener for the email form submission
+    emailForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        // You can add code here to send the email and request OTP
+
+        // For demonstration purposes, showing the OTP pop-up directly
+        showOtpPopup();
+    });
+
+    // Event listener for the OTP form submission
+    otpForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        const enteredOTP = document.getElementById('otp').value;
+        // You can add code here to validate the entered OTP and proceed accordingly
+        const correctOTP = "123456"; // Replace this with the correct OTP for validation
+
+        if (enteredOTP === correctOTP) {
+            // Correct OTP, hide the overlay (OTP pop-up) and redirect
+            hideOtpPopup();
+            // Redirect to forgotpassword.php after OTP confirmation
+            window.location.href = 'forgotpassword.php';
+        } else {
+            // Incorrect OTP, display an error message
+            document.getElementById('otpError').innerText = 'Incorrect OTP. Please try again.';
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Loading screen HTML -->
+
+    <style>
+        /* Add CSS for the loading screen */
+        .loading-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 9999;
+        }
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid #4CAF50; /* Green border */
+            border-top: 4px solid transparent; /* Transparent border on top (creates a circle) */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite; /* Apply animation */
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+
+    <!-- Loading screen HTML -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+</div>
+
+<script>
+    function showLoading() {
+        document.getElementById('loadingScreen').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
